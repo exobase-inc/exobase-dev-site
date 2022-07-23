@@ -1,0 +1,36 @@
+---
+title: boil
+description: "Reduce a list of items down to one item"
+---
+
+import { SourceLinkAndPreview } from '@/components/SourceLinkAndPreview'
+import { TestingLinkAndPreview } from '@/components/TestingLinkAndPreview'
+
+## Basic usage
+
+Given an array of items return the final item that wins the comparison condition. Useful for more complicated min/max.
+
+```ts
+import { boil } from 'radash'
+
+const fish = [{
+  name: 'Marlin',
+  weight: 105.22
+}, {
+  name: 'Bass',
+  weight: 8.99
+}, {
+  name: 'Trout',
+  weight: 13.50
+}]
+
+const biggest = boil(fish, (a, b) => a.weight > b.weight ? a : b) // => marlin
+```
+
+## Testing
+
+<TestingLinkAndPreview module="array" func="boil" />
+
+## Source
+
+<SourceLinkAndPreview module="array" func="boil" />
